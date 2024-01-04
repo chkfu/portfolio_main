@@ -1,0 +1,68 @@
+@use "sections/general/navbar.scss";
+@use "sections/index_page/underlay.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@800&family=Roboto+Slab&display=swap');
+
+$style_orbitron: 'Orbitron', sans-serif;
+$style_roboto: 'Roboto Slab', serif;
+
+
+// GENREAL
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  overflow-x: clip;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  z-index: 1100;
+}
+
+body#index_page {
+  width: 100vw;
+  height: calc(768 * 4);
+  background-color: darkred;
+}
+
+// INDEX PAGES
+
+// INDEX PAGES
+
+.index_sections {
+  width: calc(100vw - 220px);
+  min-height: 768px;
+  background-color: white;
+  z-index: 100;
+  transition: all 0.5s;
+  background-color: #333333;
+}
+
+#index_section_about {
+  overflow: hidden;
+  position: absolute;
+  height: calc(768px * 4);
+  top: calc(768px);
+  left: 220px;
+}
+
+#index_section_projects {
+  position: absolute;
+  top: calc(768px * 5);
+  height: calc(768px);
+}
+
+#index_section_contact {
+  position: absolute;
+  left: 220px;
+  top: calc(768px * 6);
+  height: calc(768px);
+}
+
+footer {
+  position: absolute;
+  width: 100vw;
+  height: 200px;
+  top: calc(768px * 7);
+  background-color: darkred;
+  filter: brightness(0.9);
+}
