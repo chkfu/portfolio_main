@@ -1,26 +1,24 @@
-// UNDERLAYS
-
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@800&family=Roboto+Slab&display=swap');
-
-$style_orbitron: 'Orbitron', sans-serif;
-$style_roboto: 'Roboto Slab', serif;
+@use "./../elements/colors.scss" as colors;
+@use "./../elements/fonts.scss" as fonts;
+@use "./../elements/length.scss" as length;
 
 
+// FULL SIZE
 
 #index_underlay_bg {
   position: fixed;
   width: 100vw;
   top: 0;
   right: 0;
+  color: colors.$grey_600;
+  background-color: colors.$red_500;
   z-index: 0;
-  color: #666666;
-  background-color: darkred;
 
   #index_headings_left {
     position: absolute;
     top: 0;
     left: 0;
-    width: 220px;
+    width: length.$underlay_head_width;
     height: 100%;
     z-index: 2000;
     transition: all 0.5s;
@@ -30,7 +28,7 @@ $style_roboto: 'Roboto Slab', serif;
     position: absolute;
     top: 0;
     right: 0;
-    width: 220px;
+    width: length.$underlay_head_width;
     height: 100%;
     z-index: 2000;
     transition: all 0.5s;
@@ -41,10 +39,10 @@ $style_roboto: 'Roboto Slab', serif;
     justify-content: center;
     align-items: center;
     padding: 100px 0;
-    width: 240px;
-    font-family: $style_orbitron;
-    font-size: 64px;
-    letter-spacing: 20px;
+    width: length.$underlay_head_width;
+    font-family: fonts.$style_orbitron;
+    font-size: fonts.$head_size_600;
+    letter-spacing: fonts.$para_size_600;
     writing-mode: vertical-rl;
     text-orientation: mixed;
     transition: all 0.5s;
@@ -78,9 +76,7 @@ $style_roboto: 'Roboto Slab', serif;
 
 
 
-// RESPONSIVE DESIGN
-
-// 1. Large - 1024px
+// RESPONSIVE LARGE - 1024px
  @media only screen and (max-width: 1024px) {
 
   #index_underlay_bg {

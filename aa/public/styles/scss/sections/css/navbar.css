@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@800&family=Roboto+Slab&display=swap");
 nav {
   display: flex;
   justify-content: space-between;
@@ -27,10 +28,10 @@ nav #nav_right #nav_right_expanded ul {
 }
 nav #nav_right #nav_right_expanded ul li {
   padding: 24px;
-  border-bottom: 4px solid #333333;
+  border-bottom: 4px solid #666666;
 }
 nav #nav_right #nav_right_expanded ul li:hover {
-  color: #CCCCCC;
+  color: #cccccc;
   border-bottom: 4px solid #666666;
   cursor: pointer;
 }

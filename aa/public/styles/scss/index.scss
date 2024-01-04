@@ -1,10 +1,9 @@
+@use "sections/elements/colors.scss" as colors;
+@use "sections/elements/fonts.scss" as fonts;
+@use "sections/elements/length.scss" as length;
+
 @use "sections/general/navbar.scss";
 @use "sections/index_page/underlay.scss";
-
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@800&family=Roboto+Slab&display=swap');
-
-$style_orbitron: 'Orbitron', sans-serif;
-$style_roboto: 'Roboto Slab', serif;
 
 
 // GENREAL
@@ -20,8 +19,8 @@ $style_roboto: 'Roboto Slab', serif;
 
 body#index_page {
   width: 100vw;
-  height: calc(768 * 4);
-  background-color: darkred;
+  height: calc(length.$index_hero_height + length.$index_about_height + length.$index_projects_height + length.$index_contact_height);
+  background-color: colors.$red_500;
 }
 
 // INDEX PAGES
@@ -29,40 +28,39 @@ body#index_page {
 // INDEX PAGES
 
 .index_sections {
-  width: calc(100vw - 220px);
-  min-height: 768px;
-  background-color: white;
+  width: calc(100vw - length.$underlay_head_width);
+  min-height: length.$single_section_height;
+  background-color: colors.$grey_100;
   z-index: 100;
   transition: all 0.5s;
-  background-color: #333333;
+  background-color: colors.$grey_500;
 }
 
 #index_section_about {
   overflow: hidden;
   position: absolute;
-  height: calc(768px * 4);
-  top: calc(768px);
-  left: 220px;
+  height: length.$index_about_height;
+  top: length.$index_hero_height;
+  left: length.$underlay_head_width;
 }
 
 #index_section_projects {
   position: absolute;
-  top: calc(768px * 5);
-  height: calc(768px);
+  top: calc(length.$index_hero_height + length.$index_about_height);
+  height: length.$index_projects_height;
 }
 
 #index_section_contact {
   position: absolute;
-  left: 220px;
-  top: calc(768px * 6);
-  height: calc(768px);
+  left: length.$underlay_head_width;
+  top: calc(length.$index_hero_height + length.$index_about_height + length.$index_projects_height);
+  height: length.$index_contact_height;
 }
 
 footer {
   position: absolute;
   width: 100vw;
-  height: 200px;
-  top: calc(768px * 7);
-  background-color: darkred;
-  filter: brightness(0.9);
+  height: length.$footer_height;
+  top: calc(length.$index_hero_height + length.$index_about_height + length.$index_projects_height + length.$index_contact_height);
+  background-color: colors.$red_600;
 }
