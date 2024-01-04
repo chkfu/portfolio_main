@@ -1,0 +1,7 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  overflow-x: clip;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}/*# sourceMappingURL=index.css.map */
