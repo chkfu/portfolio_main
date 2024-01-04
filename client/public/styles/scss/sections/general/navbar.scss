@@ -1,0 +1,84 @@
+
+$style_orbitron: 'Orbitron', sans-serif;
+$style_roboto: 'Roboto Slab', serif;
+
+
+// NAVIGATION
+
+nav {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ width: 100vw;
+ height: 80px;
+ position:fixed;
+ top: 0px;
+ padding: 0 80px;
+ color: #666666;
+ box-shadow:  0 1px 2px 0 rgba(0,0,0,.2);
+ font-size: 20px;
+ font-family: $style_orbitron;
+ z-index: 1000;
+
+
+//  1a. Left Hand Side
+
+
+//  1b. Right Hand Side
+ #nav_right {
+  display: flex;
+  justify-content: space-between;
+
+  #nav_right_expanded {
+    display: block;   
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+
+      li {
+        padding: 24px;
+        border-bottom: 4px solid #333333;
+      
+        &:hover {
+          color: #CCCCCC;
+          border-bottom: 4px solid #666666;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  #nav_right_shrinked {
+    display: none;
+  }
+ }
+
+}
+
+
+// RESPONSIVE DESIGN
+
+@media only screen and (max-width: 767px) {
+
+  nav {
+
+    // 1. Left Hand Side
+
+
+    // 2. Right Hand Side
+
+    #nav_right {
+      #nav_right_expanded {
+        display: none;
+      }
+      #nav_right_shrinked {
+        display: block;
+     }
+    }
+
+  }
+
+}
+

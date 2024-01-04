@@ -1,3 +1,11 @@
+@use "sections/general/navbar.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@800&family=Roboto+Slab&display=swap');
+
+$style_orbitron: 'Orbitron', sans-serif;
+$style_roboto: 'Roboto Slab', serif;
+
+
 // GENREAL
 
 *, *::before, *::after {
@@ -6,4 +14,5 @@
   position: relative;
   margin: 0;
   padding: 0;
+  z-index: 1100;
 }
