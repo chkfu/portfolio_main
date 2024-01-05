@@ -1,0 +1,341 @@
+@use "./../elements/colors.scss" as colors;
+@use "./../elements/fonts.scss" as fonts;
+@use "./../elements/length.scss" as length;
+
+
+// HERO SECTION
+
+  #index_section_hero {
+    display: flex;
+    position: absolute;
+    background-image: url("/images/background/grey_backdrop.jpg");
+    background-position: top;
+    background-size: cover;
+    background-repeat: none;
+    filter: brightness(0.8);
+
+    .index_hero_box {
+      width: 100%;
+      height: length.$index_hero_height;
+    }
+
+
+    // 1. Feature Texts
+
+    #index_hero_central {
+      position: absolute;
+      top: calc(length.$nav_high_height + 60px);
+      right: 50%;
+      width: 100vw;
+      transform: translateX(50%);
+      transition: all 0.5s ease-in-out;
+
+      p.index_hero_mainText {
+        font-size: 44px;
+        font-family: fonts.$style_orbitron;
+        font-weight: bold;
+        line-height: fonts.$head_size_400;
+        text-align: center;
+        background-size: cover;
+        background-repeat: repeat;
+        background: url("/images/background/codes_textMask_code.png");
+        background-clip: text;
+        background-attachment: fixed;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: brightness(1.2);
+      }
+     }
+    
+
+    // 2. Left Photo Area
+
+    #index_hero_left {
+
+      #feature_image {
+        top: 70px;
+        left: -70px;
+        transform: translateX(-240px) translateY(-40px) scale(0.58);
+        transition: all 1s ease-in-out;
+        z-index: 200;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        margin-top: 270px;
+        margin-left: 0px;
+        width: 560px;
+        height: 500px;
+        background: colors.$red_500;
+        background: linear-gradient(45deg, colors.$red_800 0%, colors.$red_700 20%, colors.$red_600 60%, colors.$red_500 100%);
+        transform: translateX(0);
+        transition: all 1.5s ease-in-out;
+        border-top-right-radius: 100%;
+        box-shadow: colors.$red_600 -2px -4px 2px -2px;
+        z-index: 200;
+      }
+
+
+      // 3. Right TextBox Area
+
+      #feature_name_box {
+        position: absolute;
+        width: 50%;
+        max-width: 520px;
+        top: 220px;
+        right: 17%;
+        padding: 3% 4%;
+        border-radius: 20px;
+        transform:  translateX(80px) translateY(80px);
+        transition: all 0.5s;
+        transition-delay: 0s;
+   
+        &::before {
+          content:" ";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;     
+          background-color: colors.$grey_200;
+          opacity: 0.55;
+          transform: blur(2px);
+          transition: all 0.5s;
+        }
+
+        h2 {
+          margin-bottom: 8px;
+          padding: 4px 0;
+          color: colors.$red_500;
+          font-size: fonts.$para_size_700;
+          font-family: fonts.$style_orbitron;
+
+          &.hero_name_title_shrinked {
+            display: none;
+          }
+          &.hero_name_title_expanded {
+            display: block;
+          }
+        }
+
+        #hero_name_description_box {
+          h4 {
+            font-size: fonts.$para_size_400;
+            font-family: fonts.$style_roboto;
+            color: colors.$red_500;
+            text-align: justify;
+            line-height: 28px;
+
+            &.hero_name_descriptions_shrinked {
+              display: none;
+            }
+            &.hero_name_descriptions_expanded {
+              display: block;
+            }
+          }
+        }
+
+        #feature_btn_box {
+          display: flex;
+          justify-content: center;
+          margin-top: 20px;
+
+          button {
+            padding: 8px 14px;
+            border: none;
+            background-color: #fcc419;
+            font-family: fonts.$style_orbitron;
+            font-size: fonts.$para_size_400;
+
+            &:hover {
+              cursor: pointer;
+              filter: brightness(1.2);
+            }
+
+            &:active {
+              transform: scale(0.98);
+            }
+          }
+        }
+      }
+    }
+
+
+    // 4. Right Bottom Medias Links
+
+    #feature_redirect_box {
+      position: absolute;
+      bottom: 52px;
+      right: 52px;
+      margin-top: 8px;
+      margin-left: 16px;
+
+      #media_case {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        a {
+          text-decoration: none;
+
+          &::before {
+            content: attr(data-category);
+            position: absolute;
+            margin-top: 80%;
+            left: 50%;
+            transform: translateX(-35%);
+            color: colors.$red_500;
+            font-weight: bold;
+            font-size: fonts.$para_size_200;  
+            font-family: fonts.$style_orbitron;
+          }
+
+          &:hover::before {
+            color: colors.$red_500;
+            filter: brightness(1.5);
+            transition: all 2s;
+          }
+
+          &:active {
+            transform: scale(0.98);
+          }
+
+          .media_icons {
+            width: 64px;
+            height: 64px;
+            margin-left: 20px;
+            border-radius: 100%;
+            color: colors.$red_400;
+            opacity: 0.7;
+            transform: rotateX(-10%) rotateY(-10%);
+
+            &:hover {
+              color: colors.$red_500;
+              filter: brightness(1.7);
+              box-shadow: colors.$red_500 0px 4px 4px -2px, colors.$red_800 0px 4px 8px -8px;
+              transition: all 2s;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+// RESPONSIVE DESIGN
+
+@media only screen and (max-width: 767px) {
+
+  #index_section_hero {
+
+
+    // 1. Feature Text
+    #index_hero_central {
+      top: 140px;
+      transition: all 0.5s ease-in-out;
+
+      p.index_hero_mainText {
+        font-size: fonts.$head_size_300;
+      }
+    }
+
+
+    // 2. Main Area
+    #index_hero_left {
+
+      // 2a. Left Image Side
+      #feature_image {
+        top: 100px;
+        left: -160px;
+        transform: translateX(-240px) translateY(-40px) scale(0.5);
+        transition: all 1s ease-in-out;
+        z-index: 200;
+      }
+
+      &::before {
+        margin-top: 300px;
+        margin-left: 0px;
+        transform: translateX(-120px) scale(0.8);
+        transition: all 1.5s ease-in-out;
+      }
+
+      // 2b. Right Text Box Side
+      #feature_name_box {
+        position: absolute;
+        opacity: 1;
+        top: 280px;
+        left: 45%;
+        width: 260px;
+        padding: 20px 0;
+        transform:  translateX(0px) translateY(0px);
+        transition: all 0.5s ease-in-out;
+        transition-delay: 0.5s;
+  
+        &::before {
+          content: ' ';
+          position: absolute;
+          margin-top: 32px;
+          width: 16px;
+          height: 16px;
+          background-color: colors.$red_600;
+          opacity: 1;
+          z-index: 200;
+          transition: all 0.5s ease-in;
+        }
+
+        h2 {
+          margin-left: 32px;
+          color: colors.$red_500;
+          font-family: fonts.$style_orbitron;
+
+          &.hero_name_title_shrinked {
+            display: block;
+          }
+          &.hero_name_title_expanded {
+            display: none;
+          }
+        }
+
+        #hero_name_description_box {
+          margin-left: 32px;
+          font-size: fonts.$para_size_300;
+
+          h4 {
+            &.hero_name_descriptions_shrinked {
+              display: block;
+            }
+            &.hero_name_descriptions_expanded {
+              display: none;
+            }
+          }
+        }
+      }
+
+      #feature_btn_box {
+        button {
+          margin-left: -48px;
+        }
+      }
+    }
+
+
+    // 3. Right Bottom Media Box
+
+    #feature_redirect_box {
+      bottom: 40px;
+      right: 20px;
+      transition: all 0.5 ease-in-out;
+
+      #media_case {
+        a {
+          &::before {
+            margin-top: 80%;
+          }
+        }
+      }
+    }
+
+  }
+}
+

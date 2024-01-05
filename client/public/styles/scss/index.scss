@@ -1,0 +1,99 @@
+@use "sections/elements/colors.scss" as colors;
+@use "sections/elements/fonts.scss" as fonts;
+@use "sections/elements/length.scss" as length;
+
+@use "sections/general/navbar.scss";
+@use "sections/index_page/underlay.scss";
+@use "sections/index_page/section_hero.scss";
+
+
+// GENREAL
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  overflow-x: clip;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  z-index: 1100;
+}
+
+body#index_page {
+  width: 100vw;
+  height: calc(length.$index_hero_height + length.$index_about_height + length.$index_projects_height + length.$index_contact_height);
+  background-color: colors.$red_500;
+}
+
+
+// INDEX PAGES
+
+.index_sections {
+  width: calc(100vw - length.$underlay_head_width);
+  min-height: length.$single_section_height;
+  background-color: colors.$grey_100;
+  z-index: 100;
+  transition: all 0.5s;
+  background-color: colors.$grey_500;
+}
+
+#index_section_about {
+  overflow: hidden;
+  position: absolute;
+  height: length.$index_about_height;
+  top: length.$index_hero_height;
+  left: length.$underlay_head_width;
+}
+
+#index_section_projects {
+  position: absolute;
+  top: calc(length.$index_hero_height + length.$index_about_height);
+  height: length.$index_projects_height;
+}
+
+#index_section_contact {
+  position: absolute;
+  left: length.$underlay_head_width;
+  top: calc(length.$index_hero_height + length.$index_about_height + length.$index_projects_height);
+  height: length.$index_contact_height;
+}
+
+footer {
+  position: absolute;
+  width: 100vw;
+  height: length.$footer_height;
+  top: calc(length.$index_hero_height + length.$index_about_height + length.$index_projects_height + length.$index_contact_height);
+  background-color: colors.$red_600;
+}
+
+
+
+// RESPONSIVE LARGE - 1024px
+
+ @media only screen and (max-width: 1024px) {
+
+  #index_underlay_bg {
+    #index_headings_left {
+      left: -480px;
+      transition: all 0.5s;
+    }
+    #index_headings_right {
+      right: -480px;
+      transition: all 0.5s;
+    }
+  }
+
+  .index_sections {
+    width: 100vw;
+    transition: all 0.5s;
+  }
+
+  #index_section_about {
+    left: 0;
+    transition: all 0.5s;
+  }
+
+  #index_section_contact {
+    left: 0;
+    transition: all 0.5s;
+  }
+} 

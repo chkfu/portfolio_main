@@ -1,0 +1,19 @@
+// ALL COMMON
+// 1. width
+$underlay_head_width: 220px;
+// 2. height
+$nav_low_height: 40px;
+$nav_high_height: 80px;
+$single_section_height: 768px;
+$footer_height: 200px;
+
+
+
+// INDEX COMMON
+
+
+// 2. height
+$index_hero_height: calc($single_section_height * 1);
+$index_about_height: calc($single_section_height * 4);
+$index_projects_height: calc($single_section_height * 1);
+$index_contact_height: calc($single_section_height * 1);

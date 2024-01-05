@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@800&family=Roboto+Slab&display=swap");
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 80px;
+  position: fixed;
+  top: 0px;
+  padding: 0 80px;
+  color: #666666;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  font-size: 20px;
+  font-family: "Orbitron", sans-serif;
+  z-index: 1000;
+}
+nav #nav_right {
+  display: flex;
+  justify-content: space-between;
+}
+nav #nav_right #nav_right_expanded {
+  display: block;
+}
+nav #nav_right #nav_right_expanded ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+nav #nav_right #nav_right_expanded ul li {
+  padding: 24px;
+  border-bottom: 4px solid #666666;
+}
+nav #nav_right #nav_right_expanded ul li:hover {
+  color: #cccccc;
+  border-bottom: 4px solid #666666;
+  cursor: pointer;
+}
+nav #nav_right #nav_right_shrinked {
+  display: none;
+}
+
+@media only screen and (max-width: 767px) {
+  nav #nav_right #nav_right_expanded {
+    display: none;
+  }
+  nav #nav_right #nav_right_shrinked {
+    display: block;
+  }
+}/*# sourceMappingURL=navbar.css.map */

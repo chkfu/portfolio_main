@@ -1,0 +1,84 @@
+@use "./../elements/colors.scss" as colors;
+@use "./../elements/fonts.scss" as fonts;
+@use "./../elements/length.scss" as length;
+
+
+// NAVIGATION
+
+nav {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ width: 100vw;
+ height: length.$nav_high_height;
+ position:fixed;
+ top: 0px;
+ padding: 0 length.$nav_high_height;
+ color: colors.$grey_500;
+ box-shadow:  0 1px 2px 0 rgba(0,0,0,.2);
+ font-size: fonts.$para_size_500;
+ font-family: fonts.$style_orbitron;
+ z-index: 1000;
+
+
+//  1a. Left Hand Side
+
+
+//  1b. Right Hand Side
+ #nav_right {
+  display: flex;
+  justify-content: space-between;
+
+  #nav_right_expanded {
+    display: block;   
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+
+      li {
+        padding: 24px;
+        border-bottom: 4px solid colors.$grey_500;
+      
+        &:hover {
+          color: colors.$grey_200;
+          border-bottom: 4px solid colors.$grey_500;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  #nav_right_shrinked {
+    display: none;
+  }
+ }
+
+}
+
+
+// RESPONSIVE DESIGN
+
+@media only screen and (max-width: 767px) {
+
+  nav {
+
+    // 1. Left Hand Side
+
+
+    // 2. Right Hand Side
+
+    #nav_right {
+      #nav_right_expanded {
+        display: none;
+      }
+      #nav_right_shrinked {
+        display: block;
+     }
+    }
+
+  }
+
+}
+
