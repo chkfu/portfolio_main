@@ -1,4 +1,4 @@
-import { WINDOW_BREAKPOINT_X, SECTION_LENGTH_Y } from "../elements/variables";
+import { WINDOW_BREAKPOINT_X, SECTION_LENGTH_Y } from "../elements/variables.js";
 
 
 // RESIZE EVENT LISTENER
@@ -20,10 +20,8 @@ function resizing() {
       else {
         // the frame
         index_about_fixedBox.style.left = "0px";
-
       }
     }
-
 
   });
 }

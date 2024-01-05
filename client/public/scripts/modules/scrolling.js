@@ -1,21 +1,10 @@
-import { WINDOW_BREAKPOINT_X, SECTION_LENGTH_Y } from "../elements/variables";
+import { WINDOW_BREAKPOINT_X, SECTION_LENGTH_Y } from "../elements/variables.js";
 
 
 // SCROLL EVENT LISTENER
 function scrolling() {
 
   // 1. Declarations
-  const WINDOW_BREAKPOINT_X = {
-    large: 1024,
-    middle: 768,
-    small: 380,
-    section_name: 220
-  };
-  const SECTION_LENGTH_Y = {
-    index_hero: 768,
-    index_about: 768 * 5
-  };
-
   // 1a. Navigation Bar Tags
   const navbar = document.querySelector('nav');
   const navitems = document.querySelectorAll(".nav_items");
