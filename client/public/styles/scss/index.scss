@@ -66,6 +66,32 @@ footer {
 }
 
 
+  // ABOUT PAGE
+  
+  #index_section_about {
+
+    #about_fixed_box {
+      border: 2px solid cyan;
+      position: absolute;
+      width: 100%;
+      height: length.$single_section_height;
+      top: 0;
+      right: 0;
+      z-index: 600;
+      transition: all 0.5s;
+
+      #about_absolute_scroll {
+        border: 5px solid yellow;
+        position: "absolute";
+        width: 500vw;
+        height: length.$single_section_height;
+      }
+    }
+
+  }
+
+
+
 
 // RESPONSIVE LARGE - 1024px
 
@@ -96,4 +122,4 @@ footer {
     left: 0;
     transition: all 0.5s;
   }
-} 
+}
