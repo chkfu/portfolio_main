@@ -1,4 +1,4 @@
-import { WINDOW_BREAKPOINT_X, SECTION_LENGTH_Y } from "../elements/variables.js";
+import { length } from "../elements/variables.js";
 
 
 // SCROLL EVENT LISTENER
@@ -25,7 +25,7 @@ function scrolling() {
     // 2a. Color Change at y=10
     if (window.scrollY < 100) {
       navbar.style.backgroundColor = "transparent";
-      navbar.style.height = SECTION_LENGTH_Y.nav_expand_height;
+      navbar.style.height = length.nav_expand_height;
       navbar.style.transition = "all 1s";
     }
     else {
@@ -33,15 +33,15 @@ function scrolling() {
       navbar.style.backgroundColor = "#111111";
       navbar.style.transition = "all 1s";
       // 2b. Shrinked at y=768
-      if (window.scrollY < SECTION_LENGTH_Y.index_hero_height) {
-        navbar.style.height = `${SECTION_LENGTH_Y.nav_expand_height}px`;
+      if (window.scrollY < length.index_hero_height) {
+        navbar.style.height = `${length.nav_expand_height}px`;
         navbar.style.fontSize = "20px";
         navitems.forEach((item) => {
           item.style.padding = "24px";
         });
       }
       else {
-        navbar.style.height = `${SECTION_LENGTH_Y.nav_shrink_height}px`;
+        navbar.style.height = `${length.nav_shrink_height}px`;
         navbar.style.fontSize = "16px";
         navitems.forEach((item) => {
           item.style.padding = "8px 24px";
@@ -54,25 +54,26 @@ function scrolling() {
   // 3. Index Headings Scrolling
   window.addEventListener("scroll", () => {
     // 3a. Change Section Name
-    if (window.scrollY <= 768) {
+    if (window.scrollY <= length.index_about_top) {
       index_heading_portfolio.style.display = "flex";
       index_heading_about.style.display = "flex";
       index_heading_projects.style.display = "none";
       index_heading_contact.style.display = "none";
     }
-    else if (window.scrollY > 768 && window.scrollY <= 768 * 6) {
+    else if (window.scrollY > length.index_about_top && window.scrollY <= length.index_projects_top) {
       index_heading_portfolio.style.display = "none";
       index_heading_about.style.display = "flex";
       index_heading_projects.style.display = "flex";
       index_heading_contact.style.display = "none";
     }
-    else if (window.scrollY > 768 * 6 && window.scrollY <= 768 * 7) {
+    else if (window.scrollY > length.index_projects_top && window.scrollY <= length.index_contact_top) {
+      console.log('testing');
       index_heading_portfolio.style.display = "none";
       index_heading_about.style.display = "none";
       index_heading_projects.style.display = "flex";
       index_heading_contact.style.display = "flex";
     }
-    else if (window.scrollY > 768 * 7) {
+    else if (window.scrollY > length.index_contact_top) {
       index_heading_portfolio.style.display = "none";
       index_heading_about.style.display = "none";
       index_heading_projects.style.display = "none";
@@ -84,40 +85,52 @@ function scrolling() {
   // 4. Index About Scrolling
   window.addEventListener("scroll", () => {
     // Update Variables
-    about_height_scrolled = window.scrollY - SECTION_LENGTH_Y.index_hero_height;
+    about_height_scrolled = window.scrollY - length.index_about_top;
 
     // 4a. About Section Parallax Sliding
-    if (window.scrollY >= SECTION_LENGTH_Y.index_hero_height && window.scrollY < SECTION_LENGTH_Y.index_hero_height + SECTION_LENGTH_Y.index_about_height) {
+    if (
+      window.scrollY >= length.index_about_top &&
+      window.scrollY < length.index_projects_top
+    ) {
       index_about_fixedBox.style.position = "fixed";
       index_about_scroll.style.transition = `transform 1s ease-in-out`;
 
       // (i) width difference > 1024
-      if (window.innerWidth > WINDOW_BREAKPOINT_X.large) {
+      if (window.innerWidth > length.breakpoint_large) {
         index_about_fixedBox.style.transition = "none";
-        index_about_fixedBox.style.left = `${WINDOW_BREAKPOINT_X.section_name}px`;
-        if (about_height_scrolled >= 0 && about_height_scrolled < SECTION_LENGTH_Y.index_about_height * 1 / inner_about_slides.length) {
+        index_about_fixedBox.style.left = `${length.overlays_width}px`;
+        // (ia) scroll setting for slides
+        if (
+          about_height_scrolled >= 0 &&
+          about_height_scrolled < length.index_about_height * 1 / (inner_about_slides.length + 1
+          )) {
           index_about_scroll.style.transform = `translateX(${window.innerWidth * 0}px)`;
         }
-        else if (about_height_scrolled >= SECTION_LENGTH_Y.index_about_height * 1 / inner_about_slides.length && about_height_scrolled < SECTION_LENGTH_Y.index_about_height * 2 / inner_about_slides.length) {
+        else if (
+          about_height_scrolled >= length.index_about_height * 1 / (inner_about_slides.length + 1) &&
+          about_height_scrolled < length.index_about_height * 2 / (inner_about_slides.length + 1)
+        ) {
           index_about_scroll.style.transform = `translateX(${(window.innerWidth - 220) * -1}px)`;
         }
       }
+
+      // (ii) width difference < 1024
       else {
         index_about_fixedBox.style.left = "0px";
+        // (iia) scroll setting for slides
         if (
           about_height_scrolled >= 0 &&
-          about_height_scrolled < SECTION_LENGTH_Y.index_about_height * 1 / inner_about_slides.length
+          about_height_scrolled < length.index_about_height * 1 / (inner_about_slides.length + 1)
         ) {
           index_about_scroll.style.transform = `translateX(${window.innerWidth * 0}px)`;
         }
         else if (
-          about_height_scrolled >= SECTION_LENGTH_Y.index_about_height * 1 / inner_about_slides.length &&
-          about_height_scrolled < SECTION_LENGTH_Y.index_about_height * 2 / inner_about_slides.length
+          about_height_scrolled >= length.index_about_height * 1 / (inner_about_slides.length + 1) &&
+          about_height_scrolled < length.index_about_height * 2 / (inner_about_slides.length + 1)
         ) {
           index_about_scroll.style.transform = `translateX(${window.innerWidth * -1}px)`;
         }
       }
-
     }
 
     // (ii) width difference < 1024
@@ -125,7 +138,6 @@ function scrolling() {
       index_about_fixedBox.style.position = "absolute";
       index_about_fixedBox.style.left = "0px";
     }
-
   });
 };
 

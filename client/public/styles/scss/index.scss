@@ -20,7 +20,7 @@
 
 body#index_page {
   width: 100vw;
-  height: calc(768 * 4);
+  height: calc(length.$single_section_height * 4);
   background-color: colors.$red_500;
 }
 
@@ -28,6 +28,7 @@ body#index_page {
 // INDEX PAGES
 
 .index_sections {
+
   width: calc(100vw - length.$underlay_head_width);
   min-height: length.$single_section_height;
   z-index: 100;
@@ -47,14 +48,14 @@ body#index_page {
   position: absolute;
   top: calc(length.$index_hero_height + length.$index_about_height);
   left: 0;
-  height: 100%;
+  height: length.$index_projects_height;
 }
 
 #index_section_contact {
   position: absolute;
   top: calc(length.$index_hero_height + length.$index_about_height + length.$index_projects_height);
   left: length.$underlay_head_width;
-  height: 100%;
+  height: length.$index_contact_height;
 }
 
 footer {
