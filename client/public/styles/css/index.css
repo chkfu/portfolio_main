@@ -433,6 +433,7 @@ footer {
   top: 40px;
   left: 0;
   z-index: 600;
+  transform: translateX(0px);
   transition: all 0.5s;
 }
 #index_section_about #about_fixed_box #about_absolute_scroll {
