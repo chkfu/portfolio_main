@@ -19,11 +19,9 @@ function resizing() {
     */
     if (window.innerWidth > length.breakpoint_large) {
       index_about_fixedBox.style.left = `${length.overlays_width}px`;
-      console.log(index_about_fixedBox.style.left);
     }
     else {
       index_about_fixedBox.style.left = "0px";
-      console.log(index_about_fixedBox.style.left);
     }
   });
 }
