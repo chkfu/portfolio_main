@@ -28,3 +28,17 @@ export const length = {
   index_contact_top: 768 * (1 + 3 + 1),
   index_contact_height: 768 * 1,
 };
+
+
+export const colors = {
+
+  // I. ALL
+  // A. Navbar
+  navbar_bg_grey: "#111111",
+
+  // II. INDEX PAGE
+  // I. About Section
+  highlighter_blue: "#4dabf7",
+  highlighter_yellow: "#fcc419",
+  highlighter_grey: "#dddddd"
+};

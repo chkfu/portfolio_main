@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@800&family=Roboto+Slab&display=swap");
+#index_section_about #about_fixed_box {
+  position: absolute;
+  width: 100%;
+  height: 768px;
+  top: 40px;
+  left: 0;
+  z-index: 600;
+  transform: translateX(0px);
+  transition: all 0.5s;
+}
+#index_section_about #about_fixed_box #about_absolute_scroll {
+  display: flex;
+  position: "absolute";
+  width: 400vw;
+  height: 768px;
+  color: #cccccc;
+}
+#index_section_about #about_fixed_box #about_absolute_scroll .about_slides {
+  display: flex;
+  justify-content: center;
+  width: calc(100vw - 220px);
+  height: 100%;
+  transform: translateX(0px);
+}
+#index_section_about #about_fixed_box #about_absolute_scroll .about_slides .text_box {
+  position: absolute;
+  width: 60%;
+  bottom: 15%;
+  background-color: #111111;
+  opacity: 0.65;
+  padding: 40px 60px;
+}
+#index_section_about #about_fixed_box #about_absolute_scroll .about_slides .text_box .icon_highlighter {
+  --after-color: #4dabf7;
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  width: 36px;
+  height: 36px;
+  filter: brightness(1.2);
+  cursor: pointer;
+}
+#index_section_about #about_fixed_box #about_absolute_scroll .about_slides .text_box .icon_highlighter::after {
+  content: attr(data-highlight);
+  position: absolute;
+  color: var(--after-color);
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Orbitron", sans-serif;
+  font-size: 12px;
+}
+#index_section_about #about_fixed_box #about_absolute_scroll .about_slides .text_box .icon_highlighter:hover {
+  filter: brightness(1.5);
+}
+#index_section_about #about_fixed_box #about_absolute_scroll .about_slides .text_box .icon_highlighter:active {
+  transform: scale(0.98);
+}
+#index_section_about #about_fixed_box #about_absolute_scroll .about_slides .text_box h4 {
+  margin-bottom: 36px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 32px;
+  line-height: 36px;
+}
+#index_section_about #about_fixed_box #about_absolute_scroll .about_slides .text_box p {
+  margin-top: 12px;
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  line-height: 32px;
+  text-align: justify;
+}
+#index_section_about #about_fixed_box #about_absolute_scroll .about_slides .text_box p span.text_gp01 {
+  font-weight: bold;
+  color: #4dabf7;
+  filter: brightness(1.2);
+}
+#index_section_about #about_fixed_box #about_absolute_scroll .about_slides .text_box p span.text_gp02 {
+  font-weight: bold;
+  color: #cccccc;
+  filter: brightness(1.2);
+}
+#index_section_about #about_fixed_box #about_absolute_scroll .about_slides#about_slide_01 #poster_frontend {
+  width: 100%;
+  height: 100%;
+  background: url("./../../images/background/about_poster_frontend.jpeg");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#index_section_about #about_fixed_box #about_absolute_scroll .about_slides#about_slide_01 #poster_frontend::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 600;
+  background-color: #000000;
+  opacity: 0.7;
+}
+#index_section_about #about_fixed_box #about_absolute_scroll .about_slides#about_slide_02 #poster_backend {
+  width: 100vw;
+  height: 100%;
+  background: url("./../../images/background/about_poster_backend.jpg");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: translateX(0px);
+}
+#index_section_about #about_fixed_box #about_absolute_scroll .about_slides#about_slide_02 #poster_backend::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: 600;
+  background-color: #000000;
+  opacity: 0.5;
+}
+
+@media only screen and (max-width: 1024px) {
+  #index_section_about #about_fixed_box {
+    transform: translateX(0px);
+  }
+  #index_section_about #about_fixed_box #about_absolute_scroll {
+    display: flex;
+    position: "absolute";
+    width: 400vw;
+    height: 768px;
+    color: white;
+  }
+  #index_section_about #about_fixed_box #about_absolute_scroll .about_slides {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100%;
+    transform: translateX(0px);
+  }
+  #index_section_about #about_fixed_box #about_absolute_scroll .about_slides .text_box {
+    min-width: 370px;
+  }
+  #index_section_about #about_fixed_box #about_absolute_scroll .about_slides#about_slide_01 {
+    padding: 0px;
+    height: 100%;
+  }
+  #index_section_about #about_fixed_box #about_absolute_scroll .about_slides#about_slide_01 #poster_frontend {
+    width: 100%;
+    height: 100%;
+  }
+  #index_section_about #about_fixed_box #about_absolute_scroll .about_slides#about_slide_01 {
+    width: 100vw;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #index_section_about #about_fixed_box {
+    position: absolute;
+    width: 100%;
+    height: 768px;
+    top: 40px;
+    left: 0;
+    z-index: 600;
+    transform: translateX(0px);
+    transition: all 0.5s;
+  }
+  #index_section_about #about_fixed_box #about_absolute_scroll {
+    display: flex;
+    position: "absolute";
+    width: 400vw;
+    height: 768px;
+    color: white;
+  }
+  #index_section_about #about_fixed_box #about_absolute_scroll .about_slides {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100%;
+    transform: translateX(0px);
+  }
+  #index_section_about #about_fixed_box #about_absolute_scroll .about_slides .text_box {
+    position: absolute;
+    padding: 28px;
+    left: 0;
+    bottom: 20%;
+  }
+  #index_section_about #about_fixed_box #about_absolute_scroll .about_slides .text_box h4 {
+    font-size: 20px;
+    line-height: 22px;
+  }
+  #index_section_about #about_fixed_box #about_absolute_scroll .about_slides .text_box p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}/*# sourceMappingURL=section_about.css.map */

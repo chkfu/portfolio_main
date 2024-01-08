@@ -639,4 +639,79 @@ footer {
     font-size: 14px;
     line-height: 22px;
   }
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+  overflow-x: clip;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  z-index: 1100;
+}
+
+body#index_page {
+  width: 100vw;
+  height: 3072px;
+  background-color: #640d14;
+}
+
+.index_sections {
+  width: calc(100vw - 220px);
+  min-height: 768px;
+  z-index: 100;
+  transition: all 0.5s;
+  background-color: #111111;
+}
+
+#index_section_about {
+  overflow: hidden;
+  position: absolute;
+  height: 2304px;
+  top: 768px;
+  left: 220px;
+}
+
+#index_section_projects {
+  position: absolute;
+  top: 3072px;
+  left: 0;
+  height: 768px;
+}
+
+#index_section_contact {
+  position: absolute;
+  top: 3840px;
+  left: 220px;
+  height: 768px;
+}
+
+footer {
+  position: absolute;
+  width: 100vw;
+  height: 200px;
+  top: 4608px;
+  background-color: #500a10;
+}
+
+@media only screen and (max-width: 1024px) {
+  #index_underlay_bg #index_headings_left {
+    left: -480px;
+    transition: all 0.5s;
+  }
+  #index_underlay_bg #index_headings_right {
+    right: -480px;
+    transition: all 0.5s;
+  }
+  .index_sections {
+    width: 100vw;
+    transition: all 0.5s;
+  }
+  #index_section_about {
+    left: 0;
+    transition: all 0.5s;
+  }
+  #index_section_contact {
+    left: 0;
+    transition: all 0.5s;
+  }
 }/*# sourceMappingURL=index.css.map */

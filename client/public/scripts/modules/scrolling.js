@@ -1,4 +1,4 @@
-import { length } from "../elements/variables.js";
+import { length, colors } from "../elements/variables.js";
 
 
 // SCROLL EVENT LISTENER
@@ -33,7 +33,7 @@ function scrolling() {
     }
     else {
 
-      navbar.style.backgroundColor = "#111111";
+      navbar.style.backgroundColor = colors.navbar_bg_grey;
       navbar.style.transition = "all 1s";
       // 2b. Shrinked at y=768
       if (window.scrollY < length.index_hero_height) {
@@ -112,7 +112,7 @@ function scrolling() {
           about_height_scrolled >= length.index_about_height * 1 / (inner_about_slides.length + 1) &&
           about_height_scrolled < length.index_about_height * 2 / (inner_about_slides.length + 1)
         ) {
-          index_about_scroll.style.transform = `translateX(${(window.innerWidth - 220) * -1}px)`;
+          index_about_scroll.style.transform = `translateX(${(window.innerWidth - length.overlays_width) * -1}px)`;
         }
       }
 
@@ -147,11 +147,11 @@ function scrolling() {
   window.addEventListener("scroll", () => {
     if (index_project_container.getBoundingClientRect().y <= 768 + 40 && window.innerWidth >= 1024) {
       inner_about_poster02.style.transition = "all 0.5s";
-      inner_about_poster02.style.transform = ` translateX(-220px) `;
+      inner_about_poster02.style.transform = `translateX(-${length.overlays_width}px) `;
     }
     else {
       inner_about_poster02.style.transition = "all 0.5s";
-      inner_about_poster02.style.transform = ` translateX(0px) `;
+      inner_about_poster02.style.transform = `translateX(0px) `;
     }
   });
 

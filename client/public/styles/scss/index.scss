@@ -5,6 +5,7 @@
 @use "sections/general/navbar.scss";
 @use "sections/index_page/underlay.scss";
 @use "sections/index_page/section_hero.scss";
+@use "sections/index_page/section_about.scss";
 
 
 // GENREAL
@@ -66,152 +67,6 @@ footer {
 }
 
 
-  // ABOUT PAGE
-  
-  #index_section_about {
-
-    #about_fixed_box {
-      position: absolute;
-      width: 100%;
-      height: length.$single_section_height;
-      top: 40px;
-      left: 0;
-      z-index: 600;
-      transform: translateX(0px);
-      transition: all 0.5s;
-
-      #about_absolute_scroll {
-        display: flex;
-        position: "absolute";
-        width: 400vw;
-        height: length.$single_section_height;
-        color: colors.$grey_200;
-
-        .about_slides {
-          display: flex;
-          justify-content: center;
-          width: calc(100vw - 220px);
-          height: 100%;
-          transform: translateX(-0px);
-
-          .text_box {
-            position: absolute;
-            width: 60%;
-            bottom: 15%;
-            background-color: colors.$grey_800;
-            opacity: 0.65;
-            padding: 40px 60px;
-
-            .icon_highlighter {
-              --after-color: #4dabf7;
-              position: absolute;
-              right: 18px;
-              top: 18px;
-              width: 36px;
-              height: 36px;
-              filter: brightness(1.2);
-              cursor: pointer;
-
-              &::after {
-                content: attr(data-highlight);
-                position: absolute;
-                color: var(--after-color);
-                top: 32px;
-                left: 50%;
-                transform: translateX(-50%);
-                font-family: fonts.$style_orbitron;
-                font-size: fonts.$para_size_100;
-              }
-
-              &:hover {
-                filter: brightness(1.5);
-              }
-
-              &:active {
-               transform: scale(0.98);
-              }
-            }
-
-            h4 {
-              margin-bottom: 36px;
-              font-family: fonts.$style_orbitron;
-              font-size: fonts.$head_size_100;
-              line-height: 36px;
-            }
-            p {
-              margin-top: 12px;
-              font-family: fonts.$style_roboto;
-              font-size: fonts.$para_size_400;
-              line-height: 32px;
-              text-align: justify;
-
-              span.text_gp01 {
-                font-weight: bold;
-                color: #4dabf7;
-                filter: brightness(1.2);
-              }
-
-              span.text_gp02 {
-                font-weight: bold;
-                color: colors.$grey_200;
-                filter: brightness(1.2);
-              }
-            }
-          }
-
-          &#about_slide_01 {
-
-            #poster_frontend {
-              width: 100%;
-              height: 100%;
-              background: url("./../../images/background/about_poster_frontend.jpeg");
-              background-position: right;
-              background-repeat: no-repeat;
-              background-size: cover;
-
-              &::after {
-                content: " ";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: 600;
-                background-color: colors.$grey_900;
-                opacity: 0.7
-              }
-            }
-          }
-          &#about_slide_02 {
-
-            #poster_backend {
-              width: 100vw;
-              height: 100%;
-              background: url("./../../images/background/about_poster_backend.jpg");
-              background-position: right;
-              background-repeat: no-repeat;
-              background-size: cover;
-              transform: translateX(-0px);
-
-              &::after {
-                content: " ";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100vw;
-                height: 100%;
-                z-index: 600;
-                background-color: colors.$grey_900;
-                opacity: 0.5
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-
 // RESPONSIVE LARGE - 1024px
 
  @media only screen and (max-width: 1024px) {
@@ -242,91 +97,11 @@ footer {
     transition: all 0.5s;
   }
 
-
-  #index_section_about {
-    #about_fixed_box {
-      transform: translateX(0px);
-      #about_absolute_scroll {
-        display: flex;
-        position: "absolute";
-        width: 400vw;
-        height: length.$single_section_height;
-        color: white;
-
-        .about_slides {
-          display: flex;
-          justify-content: center;
-          width: 100vw;
-          height: 100%;
-          transform: translateX(-0px);
-
-          .text_box {
-            min-width: 370px;
-          }
-
-          &#about_slide_01 {
-            padding: 0px;
-            height: 100%;
-            
-            #poster_frontend {
-              width: 100%;
-              height: 100%;
-            }
-          }
-
-          &#about_slide_01 {
-            width: 100vw;
-          }
-
-        }
-      }
-    }
-  }
 }
 
-@media only screen and (max-width: 767px) {
-  #index_section_about {
 
-    #about_fixed_box {
-      position: absolute;
-      width: 100%;
-      height: length.$single_section_height;
-      top: 40px;
-      left: 0;
-      z-index: 600;
-      transform: translateX(0px);
-      transition: all 0.5s;
+// RESPONSIVE MIDDLE - 767px
 
-      #about_absolute_scroll {
-        display: flex;
-        position: "absolute";
-        width: 400vw;
-        height: length.$single_section_height;
-        color: white;
+// @media only screen and (max-width: 767px) {
 
-        .about_slides {
-          display: flex;
-          justify-content: center;
-          width: 100vw;
-          height: 100%;
-          transform: translateX(-0px);
-
-          .text_box {
-            position: absolute;
-            padding: 28px;
-            left: 0;
-            bottom: 20%;
-            h4 {
-              font-size: fonts.$para_size_500;
-              line-height: 22px;
-            }
-            p {
-              font-size: fonts.$para_size_200;
-              line-height: 22px;
-            }
-          }
-        }
-      }
-    }
-  }
-}
+// }
